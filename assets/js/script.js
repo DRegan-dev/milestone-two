@@ -74,4 +74,13 @@ let questions = [
         choices:["A. Three","B. Two","C. Four","D. Five"],
         answer: "C"
     }
-]
+];
+function playQuiz (questions) {
+    let score = 0;
+    let quizContainer = document.getElementsByClassName ("quizquestions");
+    for(let i = 0; i < questions.length; i++) {
+        let questionContainer = document.createElement ("div");
+        questionContainer.innerHTML = `<p>Question ${i+1}: ${questions[i].question}</p>`;
+        quizContainer.appendChild(questionContainer);
+    }
+}
