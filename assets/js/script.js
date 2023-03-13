@@ -77,20 +77,33 @@ let questions = [
 ];
 function playQuiz (questions) {
     let score = 0;
-    let quizContainer = document.getElementsByClassName("quizquestions");
-    for(let i = 0; i < questions.length; i++) {
+    let questionIndex = 0;
+    let timerContainer = document.getElementsByClassName("quiztimer");
+    let timeLeft = 60;
+    let timer = setInterval(() => {
+        timeLeft --;
+        timerContainer.textContent = `Time left ${timeLeft}s`;
+        if (timeLeft === 0) {
+            clearInterval (timer);
+            endQuiz();
+        }
+    }, 1000);
+
+    function displayQuestion () {
+    let quizContainer = document.getElementsByClassName("quizquestions")[0];
         let questionContainer = document.createElement ("div");
         questionContainer.innerHTML = `<p>Question ${i+1}: ${questions[i].question}</p>`;
         quizContainer.appendChild(questionContainer);
     
-        let answerBtn = document.createElement("button");
+        let answerBtn;
     for (let j = 0; j < questions[i].choices.length; j++) {
+        answerBtn = document.createElement("button");
         answerBtn.className = "answer-btn";
         answerBtn.textContent = questions[i].choices[j];
         answerBtn.addEventListener("click", function() {
             if (this.textContent.charAt(0) === questions[i].answer) {
                 this.className += " correct";
-                score++;
+                score+= 100;
             } else {
                 this.textContent += " incorrect";
             }
@@ -98,11 +111,28 @@ function playQuiz (questions) {
             for (let k = 0; k < answerBtns.length; k++) {
                 answerBtns[k].disabled = true;
             }
+            questionIndex++;
+            if (questionIndex < questions.length) {
+                quizContainer.innerHTML = "";
+                displayQuestion ();
+            } else {
+                endQuiz();
+            }
+
         });
     }
-        questionContainer[0].appendChild(answerBtn);
-    
+        questionContainer.appendChild(answerBtn);
+}
+    function endQuiz () {
+    clearInterval(timer);
+    quizContainer.innerHTML = "";
+    timerContainer.innerHTML = "";
     let finalScore = document.createElement("p");
     finalScore.textContent = `You have Saved ${score} out of ${questions.length}`;
     quizContainer.appendChild(finalScore);
-    };
+    setTimeout(() => {
+        window.location.href = "index.html"
+    }, 3000);
+    }
+    displayQuestion();
+ }
