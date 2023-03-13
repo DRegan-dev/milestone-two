@@ -1,7 +1,7 @@
 let questions = [
     {
         question:"What 1949 science fiction book by author George Orwell describes a dystopian world in the future?",
-        choice: ["A. Bladerunner", "B. The Stranger", "C. 1984", "D. The Road"],
+        choices: ["A. Bladerunner", "B. The Stranger", "C. 1984", "D. The Road"],
         answer: "C"
     },
     {
@@ -77,10 +77,32 @@ let questions = [
 ];
 function playQuiz (questions) {
     let score = 0;
-    let quizContainer = document.getElementsByClassName ("quizquestions");
+    let quizContainer = document.getElementsByClassName("quizquestions");
     for(let i = 0; i < questions.length; i++) {
         let questionContainer = document.createElement ("div");
         questionContainer.innerHTML = `<p>Question ${i+1}: ${questions[i].question}</p>`;
         quizContainer.appendChild(questionContainer);
+    
+        let answerBtn = document.createElement("button");
+    for (let j = 0; j < questions[i].choices.length; j++) {
+        answerBtn.className = "answer-btn";
+        answerBtn.textContent = questions[i].choices[j];
+        answerBtn.addEventListener("click", function() {
+            if (this.textContent.charAt(0) === questions[i].answer) {
+                this.className += " correct";
+                score++;
+            } else {
+                this.textContent += " incorrect";
+            }
+            let answerBtns = questionContainer.querySelectorAll(".answer-btn");
+            for (let k = 0; k < answerBtns.length; k++) {
+                answerBtns[k].disabled = true;
+            }
+        });
     }
-}
+        questionContainer[0].appendChild(answerBtn);
+    
+    let finalScore = document.createElement("p");
+    finalScore.textContent = `You have Saved ${score} out of ${questions.length}`;
+    quizContainer.appendChild(finalScore);
+    };
