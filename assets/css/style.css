@@ -159,6 +159,14 @@
     width: 900px;
     color:black;
 }
+.quizquestions {
+    width: 1000px;
+    height: 500px;
+    background-color: rgba(33, 150, 243, 0.5);
+    z-index: 500;
+    margin-left: 125px;
+    margin-top: 50px;
+}
 
 @keyframes flicker {
     0%, 18%, 22%, 25%, 53%, 57%, 100% {
