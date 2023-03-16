@@ -33,12 +33,6 @@ However one warning came back as follows: 	"Functions declared within loops refe
 
 This will be fixed in a future iteration.
 
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
-
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
-
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
-
 
 
 The site was deployed to GitHub pages. The steps to deploy are as follows:
