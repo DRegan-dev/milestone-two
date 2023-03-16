@@ -1,6 +1,9 @@
 * {
     font-family: 'Tilt Neon', 'Electrolize', sans-serif;
 }
+body {
+    background-color: #2196f3;
+}
 .container {
     background: #432189;
     position:relative;
@@ -77,6 +80,25 @@
     transition: 1s;
     transition-delay: 0.75s;
 }
+#restart-btn {
+    position:relative;
+    display:inline-block;
+    padding: 15px 30px;
+    color: #2196f3;
+    letter-spacing: 4px;
+    text-decoration: none;
+    font-size: 25px;
+    overflow: hidden;
+    transform: 0.2s;
+    margin-left: 505px;
+    margin-top: 10px;
+}
+#restart-btn:hover {
+    color: #fff;
+    background: #2196f3;
+    box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+    transition-delay: 1s;
+}
 .overlay {
     position:absolute;
     top:0;
@@ -144,6 +166,7 @@
 .dialoguewrapper {
     overflow: hidden;
 }
+
 .thevoid {
     height:200px;
     width:200px;
@@ -159,13 +182,64 @@
     width: 900px;
     color:black;
 }
+#quizlogo {
+    margin-left: 15px;
+}
 .quizquestions {
+    border: 10px;
+    color: #2196f3;
+    text-align: center;
+    text-shadow:
+      /* White glow */
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 21px #fff,
+      /* Green glow */
+      0 0 42px #2196f3,
+      0 0 82px #2196f3,
+      0 0 92px #2196f3,
+      0 0 102px #2196f3,
+      0 0 151px #2196f3;
     width: 1000px;
     height: 500px;
-    background-color: rgba(33, 150, 243, 0.5);
+    background-color: transparent;
     z-index: 500;
     margin-left: 125px;
     margin-top: 50px;
+    font-size: 30px;
+}
+
+button {
+    position: absolute;
+    width: 300px;
+    margin-top: 10px;
+    margin-right: 20px;
+    margin-left: 15px;
+    padding-left: 10px;
+    position:relative;
+    display:inline-block;
+    padding: 15px 30px;
+    color: #2196f3;
+    letter-spacing: 2px;
+    text-decoration: none;
+    font-size: 25px;
+    overflow: hidden;
+    transform: 0.2s;
+}
+button:hover {
+    color: #fff;
+    background: #2196f3;
+    box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+    transition-delay: none;
+}
+.correct {
+    background-color: green;
+}
+.incorrect {
+    background-color: red;
+}
+.quiztimer {
+    background-color: #2196f3;
 }
 
 @keyframes flicker {
