@@ -23,7 +23,6 @@ body {
     text-decoration: none;
     font-size: 25px;
     overflow: hidden;
-    transform: 0.2s;
     margin-left: 505px;
     margin-top: 60px;
 }
@@ -103,7 +102,6 @@ body {
     text-decoration: none;
     font-size: 25px;
     overflow: hidden;
-    transform: 0.2s;
     margin-left: 505px;
     margin-top: 10px;
 }
@@ -142,7 +140,7 @@ body {
 #title-intro {
     color: #2196f3;
     font-size: 100px;
-    text-shadow: 1px 1px 1px 1px white;
+    text-shadow: 1px 1px white;
     padding-top: 20px;
     padding-left: 100px;
     animation: flicker 1.5s infinite alternate;
@@ -151,7 +149,7 @@ body {
 #game-premise {
     color: black;
     font-size: 25px;
-    text-shadow: 1px 1px 1px 1px white;
+    text-shadow: 1px 1px white;
     width: 800px;
     padding-left:200px;
 }
@@ -245,14 +243,13 @@ button {
     text-decoration: none;
     font-size: 25px;
     overflow: hidden;
-    transform: 0.2s;
+    
 }
 /* Hover styling for answer buttons */
 button:hover {
     color: #fff;
     background: #2196f3;
     box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
-    transition-delay: none;
 }
 /*Styling answer buttons if answer is correct */
 .correct {

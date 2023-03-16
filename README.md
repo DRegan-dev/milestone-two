@@ -1,108 +1,53 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Triviopolis
+Welcome to Triviopolis. This site is designed to invite users to participate in a race against the clock multiple choice type quiz to save the citizens of triviopolis from an evil entity known as The Void. Triviopolis is a fully responsize quiz that allows users to see the question above 4 buttons containing 4 possible answers to each question. As soon as one question is answers another will appear. Users have 60 seconds to answer all 15 questions. The score of the game equates to number of citizens saved so users must answer quickly if they want to save as many citiazens as they can. 
 
-Welcome DRegan-dev,
+For example, Love Maths is a site that hopes to demonstrate how pure JavaScript works in a real-world context. The site will be targeted toward people who not only love to implement more advanced JavaScript concepts but also maths. Love Maths is a fully responsive JavaScript maths game that will allow users to add, subtract, multiply and divide numbers.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Responsice Mockup
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+Features
+The Landing Page:
 
-## Gitpod Reminders
+The Landing page consists of a greeting message of "Welcome to Triviopolis", a set up of the story Narrative and a button which allows the user to decide if they would like to proceed forward and further into the game.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+The Instructions page
+This gives the user a breakdown of what is required of them to play the game and how the game will respond if they carry out those required actions. It also features a button where the user can click to proceed forward to the next page.
 
-`python3 -m http.server`
+StoryBoard page
+This provides our first look at the games antagonist character "The Void". The purpose of this page is to provide the user an opportunity to get more emotionally invested in the game through a dialogue from its main character. It also provides the user an opportunity to proceed to the quiz page. 
 
-A blue button should appear to click: _Make Public_,
+The quiz page
+The quiz page consists of the tricoplois logo displayed at the top of the page and two divs. one for displaying the questions and answer choices and the other for displaying the 60 second timer. The user will be able to select whichever answer they believe to be correct. They have 15 questions to play through with responsive answer buttons to select their answers. If time runs out or they answer all 15 questions before the time runs out the questions and answer choices disappear and the users score is displayed. This page also features a restart button which will reload the page and allow the user to start the quiz again. 
 
-Another blue button should appear to click: _Open Browser_.
+Future iterations
+Future iterations of this quiz will include randomized displaying of questions so that its not the same sequnce of question everytime you restart the quiz.
+It will also include an even more responsive design and more story and rounds to play through with increasing level of challenge in each.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+Testing
+No errors were found when testing this sites CSS @url(https://jigsaw.w3.org/css-validator/validator)
 
-A blue button should appear to click: _Make Public_,
+No errors were found when testing this sites HTML code @url (https://validator.w3.org/nu/?doc=https%3A%2F%2Fcode-institute-org.github.io%2Flove-maths%2F)
 
-Another blue button should appear to click: _Open Browser_.
+No errors were found when testing this sites Javascript code @url (https://jshint.com/)
+However one warning came back as follows: 	"Functions declared within loops referencing an outer scoped variable may lead to confusing semantics. (questions, questionIndex, score, questionContainer, quizContainer, displayQuestion, endQuiz)"
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+This will be fixed in a future iteration.
 
-To log into the Heroku toolbelt CLI:
+In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+If this section grows too long, you may want to split it off into a separate file and link to it from here.
 
-------
 
-## Release History
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+The site was deployed to GitHub pages. The steps to deploy are as follows:
+In the GitHub repository, navigate to the Settings tab
+From the source section drop-down menu, select the Master Branch
+Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
+The live link can be found here - https://code-institute-org.github.io/love-maths/
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
-
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+Credits
+Inspiration for this site came from Netflix trivaverse quiz. 
+Java script functions were obtained from w3schools. 
+and the neon flicker effect was taken from code found on https://css-tricks.com/how-to-create-neon-text-with-css/
