@@ -1,15 +1,19 @@
+/* Sets the font family fo all elements */
 * {
     font-family: 'Tilt Neon', 'Electrolize', sans-serif;
 }
+/* Sets the background color fo the entire page */
 body {
     background-color: #2196f3;
 }
+/* Set the parameters for a container that fills the entire viewport */
 .container {
     background: #432189;
     position:relative;
     width: 100%;
     height:100vh;
 }
+/* Styles the elements with a class of .continue-btn */
 .continue-btn {
     position:relative;
     display:inline-block;
@@ -23,16 +27,19 @@ body {
     margin-left: 505px;
     margin-top: 60px;
 }
+/* Hover styles for continue buttons */
 .continue-btn:hover {
     color: #255784;
     background: #2196f3;
     box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
     transition-delay: 1s;
 }
+/* Parameters for the first span of the continue button */
 .continue-btn span {
     position:absolute;
     display: block;
 }
+/* Hover styles for the first span */
 .continue-btn span:nth-child(1) {
     top: 0;
     left:-100%;
@@ -44,18 +51,7 @@ body {
     left:100%;
     transition: 1s;
 }
-.continue-btn span:nth-child(3) {
-    bottom: 0;
-    left:-100%;
-    width:100%;
-    height: 2px;
-    background: linear-gradient(270deg, transparent, #2196f3);
-}
-.continue-btn:hover span:nth-child(3) {
-    left:100%;
-    transition: 1s;
-    transition-delay: 0.5s;
-}
+/* Sets parameters for the second span of continue buttons */
 .continue-btn span:nth-child(2) {
     top: -100%;
     right: 0;
@@ -63,11 +59,27 @@ body {
     height: 100%;
     background: linear-gradient(180deg, transparent, #2196f3);
 }
+/* Hover styles for second span of continue button */
 .continue-btn:hover span:nth-child(2) {
     top:100%;
     transition: 1s;
     transition-delay: 0.25s;
 }
+/* Sets parameters for the third span of continue buttons */
+.continue-btn span:nth-child(3) {
+    bottom: 0;
+    left:-100%;
+    width:100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #2196f3);
+}
+/* Hover styles for third span of continue button */
+.continue-btn:hover span:nth-child(3) {
+    left:100%;
+    transition: 1s;
+    transition-delay: 0.5s;
+}
+/* Sets parameters for the fourth span of continue buttons */
 .continue-btn span:nth-child(4) {
     bottom: -100%;
     left: 0;
@@ -75,11 +87,13 @@ body {
     height: 100%;
     background: linear-gradient(360deg, transparent, #2196f3);
 }
+/* Hover styles for fourth span of continue button */
 .continue-btn:hover span:nth-child(4) {
     top:100%;
     transition: 1s;
     transition-delay: 0.75s;
 }
+/* Sets parameters for styling the restart button */
 #restart-btn {
     position:relative;
     display:inline-block;
@@ -93,12 +107,14 @@ body {
     margin-left: 505px;
     margin-top: 10px;
 }
+/* Hover styles for restart button */
 #restart-btn:hover {
     color: #fff;
     background: #2196f3;
     box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
     transition-delay: 1s;
 }
+/* Styling for black semi-transparent overlay for background image */
 .overlay {
     position:absolute;
     top:0;
@@ -107,6 +123,7 @@ body {
     height:100vh;
     width:100%;
 }
+/* Styles text to give a neon sign effect */
 .neon-text {
     color: #fff;
   text-shadow:
@@ -114,13 +131,14 @@ body {
     0 0 7px #fff,
     0 0 10px #fff,
     0 0 21px #fff,
-    /* Green glow */
+    /* Blue glow */
     0 0 42px #2196f3,
     0 0 82px #2196f3,
     0 0 92px #2196f3,
     0 0 102px #2196f3,
     0 0 151px #2196f3;
 }
+/* Styling for Logo on pages proceding the landing page */
 #title-intro {
     color: #2196f3;
     font-size: 100px;
@@ -129,6 +147,7 @@ body {
     padding-left: 100px;
     animation: flicker 1.5s infinite alternate;
 }
+/* Styles the paragraph that contains the premis of the game on the landing page */
 #game-premise {
     color: black;
     font-size: 25px;
@@ -136,6 +155,7 @@ body {
     width: 800px;
     padding-left:200px;
 }
+/* Styling for instructions Heading on instructions page */
 #instructions {
     padding-left:100px;
     margin-top: 100px;
@@ -143,6 +163,7 @@ body {
     font-size:60px;
     animation: flicker 1.5s infinite alternate;
 }
+/* Styles Instructions list on instructions page */
 .instruction-list {
     padding-left: 100px;
     list-style-type: none;
@@ -151,6 +172,7 @@ body {
     font-size: 25px;
     width:800px;
 }
+/* Styling for Background image */
 #neon-city {
     width:100%;
     height:100vh;
@@ -158,15 +180,11 @@ body {
     padding:0;
     left:0;
 }
-#background-images {
-    margin: 0;
-    width: 100%;
-    height:100vh;
-}
+/* Styling for div containing character dialogue */
 .dialoguewrapper {
     overflow: hidden;
 }
-
+/* Styling for character image */
 .thevoid {
     height:200px;
     width:200px;
@@ -176,15 +194,18 @@ body {
     margin-left: 100px;
 
 }
+/* Styling for dialogue text */
 .void-dialogue {
     margin-top: 200px;
     font-size: 25px;
     width: 900px;
     color:black;
 }
+/* Styling for logo on quiz page */
 #quizlogo {
     margin-left: 15px;
 }
+/* Styling for div that displays quiz questions */
 .quizquestions {
     border: 10px;
     color: #2196f3;
@@ -208,7 +229,7 @@ body {
     margin-top: 50px;
     font-size: 30px;
 }
-
+/*Styling for Answer Buttons */ 
 button {
     position: absolute;
     width: 300px;
@@ -226,22 +247,26 @@ button {
     overflow: hidden;
     transform: 0.2s;
 }
+/* Hover styling for answer buttons */
 button:hover {
     color: #fff;
     background: #2196f3;
     box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
     transition-delay: none;
 }
+/*Styling answer buttons if answer is correct */
 .correct {
     background-color: green;
 }
+/* Styling for answer button if answer is incorrect */
 .incorrect {
     background-color: red;
 }
+/* Styling for div containg the timer for the quiz */
 .quiztimer {
     background-color: #2196f3;
 }
-
+/* Styling for neon sign flicker effect */
 @keyframes flicker {
     0%, 18%, 22%, 25%, 53%, 57%, 100% {
       text-shadow:
