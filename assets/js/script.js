@@ -1,4 +1,6 @@
+// This event listener runs the function once the HTML document is fully loaded
 document.addEventListener("DOMContentLoaded", function() {
+// This is an array of objects, where each object represents a question for the quiz.  
   let questions = [{
       question: "What 1949 science fiction book by author George Orwell describes a dystopian world in the future?",
       choices: ["A. Bladerunner", "B. The Stranger", "C. 1984", "D. The Road"],
@@ -75,54 +77,70 @@ document.addEventListener("DOMContentLoaded", function() {
       answer: "C"
     }
   ];
+  //These variables are used to keep track of the player's score and current question number.
   let score;
   let questionIndex;
+  // These variables are used to keep track of the timer and the remaining time.
   let timerContainer;
   let timeLeft;
   let timer;
+  // This function runs the quiz.
     function playQuiz(questions) {
       console.log(questions);
+  //Initialize the score and questionIndex to 0.
       score = 0;
       questionIndex = 0;
+  //Get the element that will display the timer.
       timerContainer = document.getElementsByClassName("quiztimer")[0];
+  //Sets the time limit for the quiz to 60 seconds.
       timeLeft = 60;
+  //Starts the timer and decrements the time remaining every second.
       timer = setInterval(() => {
         timeLeft--;
+  //Updates the timer display.
         timerContainer.textContent = `Time left ${timeLeft}s`;
+  //If the timer runs out this function ends the quiz
         if (timeLeft === 0) {
           clearInterval(timer);
           endQuiz();
         }
       }, 1000);
     }
+  //Calls the playQuiz function to start the quiz.
     playQuiz();
+  //These variables are used to create and display the quiz questions and answer choices.
     let quizContainer;
     let questionContainer;
+  //This function displays the current question and answer choices.
     function displayQuestion() {
+  // Gets the element that will display the quiz questions.
       quizContainer = document.getElementsByClassName("quizquestions")[0];
+  //Creates a new div element to hold the question and answer choices. 
       questionContainer = document.createElement("div");
+  //Adds the question to the question Container
       questionContainer.innerHTML = `<p>Question ${questionIndex+1}: ${questions[questionIndex].question}</p>`;
       quizContainer.appendChild(questionContainer);
       console.log("hey whats up?");
-
+  //Adds a button for each answer choice.
       let answerBtn;
       for (let j = 0; j < questions[questionIndex].choices.length; j++) {
         answerBtn = document.createElement("button");
         answerBtn.className = "answer-btn";
         answerBtn.textContent = questions[questionIndex].choices[j];
         questionContainer.appendChild(answerBtn);
-
+  //Adds an event listener to each answer button that checks if the answer is correct.
         answerBtn.addEventListener("click", function() {
+          // If the answer is correct, this adds the class "correct" class to the button and increases the players score.
           if (this.textContent.charAt(0) === questions[questionIndex].answer) {
             this.classList.add("correct");
             score += 100;
           } else {
+          // If the answer is incorrect, this add the "incorrect" class to the button.
             this.classList.add("incorrect");
           }
           console.log(score);
-
+  //Disable all answer buttons so the player can't change their answer.
           let answerBtns = questionContainer.querySelectorAll(".answer-btn");
-
           for (let k = 0; k < answerBtns.length; k++) {
             answerBtns[k].disabled = true;
           }
@@ -139,13 +157,13 @@ document.addEventListener("DOMContentLoaded", function() {
       }
 
     }
-
+//This function removes content from the HTML file to display the end of the quiz
     function endQuiz() {
       clearInterval(timer);
       quizContainer.innerHTML = "";
       timerContainer.innerHTML = "";
       
-
+//Adds the final score to the HTML
       let finalScore = document.createElement("p");
       finalScore.textContent = `You have Saved ${score} out of ${questions.length+1485} people.`;
       quizContainer.appendChild(finalScore);
@@ -153,6 +171,7 @@ document.addEventListener("DOMContentLoaded", function() {
         window.location.href = "#"
       }, 3000);
     }
+//Calls the displayQuiz function.    
     displayQuestion();
   });
 
